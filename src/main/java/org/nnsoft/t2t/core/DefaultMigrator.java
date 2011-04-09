@@ -15,6 +15,10 @@
  */
 package org.nnsoft.t2t.core;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import org.apache.log4j.Logger;
 import org.nnsoft.t2t.configuration.MigratorConfiguration;
 import org.nnsoft.t2t.configuration.NamespaceMapping;
@@ -30,12 +34,8 @@ import org.openrdf.model.impl.URIImpl;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
-import org.openrdf.repository.RepositoryResult;
-import virtuoso.sesame2.driver.VirtuosoRepository;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import virtuoso.sesame2.driver.VirtuosoRepository;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.ccm )

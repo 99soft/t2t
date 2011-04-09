@@ -15,7 +15,14 @@
  */
 package org.nnsoft.t2t;
 
-import org.apache.commons.cli.*;
+import java.io.File;
+
+import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.CommandLineParser;
+import org.apache.commons.cli.HelpFormatter;
+import org.apache.commons.cli.Options;
+import org.apache.commons.cli.ParseException;
+import org.apache.commons.cli.PosixParser;
 import org.apache.log4j.Logger;
 import org.nnsoft.t2t.configuration.ConfigurationManager;
 import org.nnsoft.t2t.configuration.MigratorConfiguration;
@@ -23,8 +30,6 @@ import org.nnsoft.t2t.core.DefaultMigrator;
 import org.nnsoft.t2t.core.Migrator;
 import org.nnsoft.t2t.core.MigratorException;
 import org.openrdf.model.impl.URIImpl;
-
-import java.io.File;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
