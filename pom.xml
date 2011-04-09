@@ -40,22 +40,6 @@
             <id>sunsite-repo</id>
             <url>http://mirrors.sunsite.dk/maven2/</url>
         </repository>
-        <repository>
-            <id>jasigorg-repo</id>
-            <url>http://developer.jasig.org/repo/content/groups/m2-legacy/</url>
-        </repository>
-        <repository>
-            <id>jboss-public-repository-group</id>
-            <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-        </repository>
-        <repository>
-            <id>java-net</id>
-            <url>http://download.java.net/maven/2/</url>
-        </repository>
-        <repository>
-            <id>apache-snapshots</id>
-            <url>http://repository.apache.org/snapshots/</url>
-        </repository>
     </repositories>
 
     <dependencies>
