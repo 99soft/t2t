@@ -136,6 +136,15 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>appassembler-maven-plugin</artifactId>
                 <version>1.1.1</version>
@@ -176,6 +185,7 @@
                 <configuration>
                     <descriptors>
                         <descriptor>${basedir}/src/main/assembly/bin.xml</descriptor>
+                        <attach>false</attach>
                     </descriptors>
                 </configuration>
             </plugin>
