@@ -77,6 +77,7 @@ public class ConfigurationManager {
     private Set<NamespaceMapping> getNamespaceMappings(XMLConfiguration xmlConfiguration) {
         Set<NamespaceMapping> result = new HashSet<NamespaceMapping>();
         HierarchicalConfiguration rules = xmlConfiguration.configurationAt("namespace-mappings");
+        @SuppressWarnings("unchecked") // type known
         List<HierarchicalConfiguration> mappings = rules.configurationsAt("mapping");
         for(HierarchicalConfiguration mapping : mappings) {
             String from = mapping.getString("from");
@@ -93,6 +94,7 @@ public class ConfigurationManager {
     private Set<Rule> getRules(XMLConfiguration xmlConfiguration) {
         Set<Rule> result = new HashSet<Rule>();
         HierarchicalConfiguration rules = xmlConfiguration.configurationAt("rules");
+        @SuppressWarnings("unchecked") // type known
         List<HierarchicalConfiguration> rulesList = rules.configurationsAt("rule");
         for(HierarchicalConfiguration rule : rulesList) {
             result.add(getRule(rule));
@@ -107,6 +109,7 @@ public class ConfigurationManager {
 
         Set<StatementPattern> applyStatementPatterns = new HashSet<StatementPattern>();
         HierarchicalConfiguration apply = rule.configurationAt("apply");
+        @SuppressWarnings("unchecked")
         List<HierarchicalConfiguration> patterns = apply.configurationsAt("patterns");
         for(HierarchicalConfiguration applyPattern : patterns) {
             applyStatementPatterns.add(parsePattern(applyPattern.getString("pattern")));
