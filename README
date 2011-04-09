@@ -1,0 +1,5 @@
+Build and assembly it with Maven,
+then:
+
+    $ java -cp target/migration-1.0-SNAPSHOT-jar-with-dependencies.jar com.cybion.commons.migration.Runner -configuration src/test/resources/configuration.xml -entrypoint http://www.cybion.it/proconsult/fonte_rss/40
+

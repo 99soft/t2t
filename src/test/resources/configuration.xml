@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration>
+    <commit-rate>10000</commit-rate>
+    <active-filtering>true</active-filtering>
+    <source>
+        <connection>
+            <host>cibionte.dyndns.org</host>
+            <port>1111</port>
+            <username>dba</username>
+            <password>cybiondba</password>
+        </connection>
+        <graph>http://www.cybion.it/proconsult/url</graph>
+        <slicing-class>com.cybion.commons.migration.slicers.FonteRSSSlicer</slicing-class>
+    </source>
+    <destination>
+        <connection>
+            <host>cibionte.dyndns.org</host>
+            <port>1111</port>
+            <username>dba</username>
+            <password>cybiondba</password>
+        </connection>
+        <graph>http://collective.com/resources/web</graph>
+    </destination>
+    <namespace-mappings>
+        <mapping>
+            <from>http://www.cybion.it/proconsult/url</from>
+            <to>http://collective.com/resources/web</to>
+        </mapping>
+        <mapping>
+            <from>http://www.cybion.it/proconsult/fonte_rss/</from>
+            <to>http://collective.com/source/rss/</to>
+        </mapping>
+    </namespace-mappings>
+    <rules>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://collective.com/resources/web> ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://collective.com/resources/web> ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://www.cybion.it/proconsult/id> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://collective.com/resources/id> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://www.cybion.it/webpage> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://collective.com/resources/web/hasFeed> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cybion.it/proconsult/fonte_rss> ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://collective.com/resource/SourceRSS> ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cybion.it/proconsult/url> ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://collective.com/resources/web> ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://purl.org/dc/terms/subject> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://purl.org/dc/terms/subject> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://purl.org/dc/terms/abstract> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://purl.org/dc/terms/abstract> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://purl.org/dc/terms/abstract> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://purl.org/dc/terms/abstract> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://collective.com/resources/web#hasFonteRss> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://collective.com/resources/web/hasFeed> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://collective.com/resources/web#webpage> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://collective.com/resources/web/webpage> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+        <rule>
+            <match>
+                <pattern><![CDATA[ ?s <http://purl.org/dc/terms/title> ?o ]]></pattern>
+            </match>
+            <apply>
+                <patterns>
+                    <pattern><![CDATA[ ?s <http://purl.org/dc/terms/title> ?o ]]></pattern>
+                </patterns>
+            </apply>
+        </rule>
+    </rules>
+</configuration>
