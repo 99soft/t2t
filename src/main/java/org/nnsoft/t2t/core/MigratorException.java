@@ -19,7 +19,12 @@ package org.nnsoft.t2t.core;
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
 public class MigratorException extends Exception {
-    
+
+    /**
+     * 
+     */
+    private static final long serialVersionUID = -4791043389071510298L;
+
     public MigratorException(String message) {
         super(message);
     }
@@ -27,4 +32,5 @@ public class MigratorException extends Exception {
     public MigratorException(String message, Exception e) {
         super(message, e);
     }
+
 }
