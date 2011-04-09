@@ -1,4 +1,4 @@
-package com.cybion.commons.migration.slicers;
+package org.nnsoft.t2t.slicers;
 
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;

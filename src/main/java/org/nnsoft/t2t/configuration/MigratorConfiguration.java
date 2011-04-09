@@ -1,6 +1,6 @@
-package com.cybion.commons.migration.configuration;
+package org.nnsoft.t2t.configuration;
 
-import com.cybion.commons.migration.core.Rule;
+import org.nnsoft.t2t.core.Rule;
 import org.openrdf.model.URI;
 
 import java.util.Set;

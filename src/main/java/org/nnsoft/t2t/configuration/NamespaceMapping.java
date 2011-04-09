@@ -1,4 +1,4 @@
-package com.cybion.commons.migration.configuration;
+package org.nnsoft.t2t.configuration;
 
 import org.openrdf.model.impl.URIImpl;
 

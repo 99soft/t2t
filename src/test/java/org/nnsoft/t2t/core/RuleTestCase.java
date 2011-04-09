@@ -1,4 +1,4 @@
-package com.cybion.commons.migration.core;
+package org.nnsoft.t2t.core;
 
 import org.openrdf.model.Statement;
 import org.openrdf.model.impl.StatementImpl;
@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 
 import java.util.HashSet;
 import java.util.Set;

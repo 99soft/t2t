@@ -1,10 +1,10 @@
-package com.cybion.commons.migration.core;
+package org.nnsoft.t2t.core;
 
-import com.cybion.commons.migration.configuration.MigratorConfiguration;
-import com.cybion.commons.migration.configuration.NamespaceMapping;
-import com.cybion.commons.migration.slicers.Slicer;
-import com.cybion.commons.migration.slicers.SlicerException;
 import org.apache.log4j.Logger;
+import org.nnsoft.t2t.configuration.MigratorConfiguration;
+import org.nnsoft.t2t.configuration.NamespaceMapping;
+import org.nnsoft.t2t.slicers.Slicer;
+import org.nnsoft.t2t.slicers.SlicerException;
 import org.openrdf.model.Resource;
 import org.openrdf.model.Statement;
 import org.openrdf.model.URI;

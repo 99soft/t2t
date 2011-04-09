@@ -1,12 +1,12 @@
-package com.cybion.commons.migration;
+package org.nnsoft.t2t;
 
-import com.cybion.commons.migration.configuration.ConfigurationManager;
-import com.cybion.commons.migration.configuration.MigratorConfiguration;
-import com.cybion.commons.migration.core.DefaultMigrator;
-import com.cybion.commons.migration.core.Migrator;
-import com.cybion.commons.migration.core.MigratorException;
 import org.apache.commons.cli.*;
 import org.apache.log4j.Logger;
+import org.nnsoft.t2t.configuration.ConfigurationManager;
+import org.nnsoft.t2t.configuration.MigratorConfiguration;
+import org.nnsoft.t2t.core.DefaultMigrator;
+import org.nnsoft.t2t.core.Migrator;
+import org.nnsoft.t2t.core.MigratorException;
 import org.openrdf.model.impl.URIImpl;
 
 import java.io.File;

@@ -1,7 +1,8 @@
-package com.cybion.commons.migration.core;
+package org.nnsoft.t2t.core;
 
-import com.cybion.commons.migration.configuration.ConfigurationManager;
-import com.cybion.commons.migration.configuration.MigratorConfiguration;
+
+import org.nnsoft.t2t.configuration.ConfigurationManager;
+import org.nnsoft.t2t.configuration.MigratorConfiguration;
 import org.openrdf.model.impl.URIImpl;
 import org.openrdf.query.algebra.StatementPattern;
 import org.openrdf.query.algebra.Var;

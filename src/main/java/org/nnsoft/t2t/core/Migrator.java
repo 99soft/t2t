@@ -1,4 +1,4 @@
-package com.cybion.commons.migration.core;
+package org.nnsoft.t2t.core;
 
 import org.openrdf.model.URI;
 import org.openrdf.repository.Repository;

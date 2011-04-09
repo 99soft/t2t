@@ -1,9 +1,9 @@
-package com.cybion.commons.migration.configuration;
+package org.nnsoft.t2t.configuration;
 
-import com.cybion.commons.migration.core.Rule;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.HierarchicalConfiguration;
 import org.apache.commons.configuration.XMLConfiguration;
+import org.nnsoft.t2t.core.Rule;
 import org.openrdf.model.URI;
 import org.openrdf.model.impl.URIImpl;
 import org.openrdf.query.algebra.StatementPattern;
