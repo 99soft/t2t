@@ -21,6 +21,7 @@
             <item name="Home" href="index.html" />
             <item name="Download" href="download.html" />
             <item name="Install" href="install.html" />
+            <item name="Run" href="run.html" />
         </menu>
 
         <menu name="External Links">
