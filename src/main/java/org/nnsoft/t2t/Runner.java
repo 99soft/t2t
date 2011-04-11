@@ -96,21 +96,19 @@ public class Runner {
                 }
             }
 
-            logger.info("99soft T2T {}", properties.getProperty("version"));
-            logger.info("T2T home: {}", System.getenv("T2T_HOME"));
-            logger.info("Java version: {}, vendor: {}",
+            System.out.printf("99soft T2T %s%n", properties.getProperty("version"));
+            System.out.printf("Java version: %s, vendor: %s%n",
                     System.getProperty("java.version"),
                     System.getProperty("java.vendor"));
-            logger.info("Java home: {}", System.getProperty("java.home"));
-            logger.info("Default locale: {}, platform encoding: {}");
-            logger.info("OS name: \"{}\", version: \"{}\", arch: \"{}\", family: \"{}\"",
-                    new Object[] {
-                        System.getProperty("os.name"),
-                        System.getProperty("os.version"),
-                        System.getProperty("os.arch"),
-                        System.getProperty("os.family")
-                    }
-            );
+            System.out.printf("Java home: %s%n", System.getProperty("java.home"));
+            System.out.printf("Default locale: %s_%s, platform encoding: %s%n",
+                    System.getProperty("user.language"),
+                    System.getProperty("user.country"),
+                    System.getProperty("sun.jnu.encoding"));
+            System.out.printf("OS name: \"%s\", version: \"%s\", arch: \"%s\"%n",
+                    System.getProperty("os.name"),
+                    System.getProperty("os.version"),
+                    System.getProperty("os.arch"));
 
             System.exit(-1);
         }
