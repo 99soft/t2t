@@ -30,6 +30,24 @@
     <version>1.0-SNAPSHOT</version>
     <name>T2T: RDF graph Migration</name>
 
+    <scm>
+        <url>http://github.com/99soft/t2t</url>
+        <connection>scm:git:ssh://github.com/99soft/t2t.git</connection>
+        <developerConnection>scm:git:git+ssh://git@github.com/99soft/t2t.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <site>
+            <id>github</id>
+            <url>gitsite:git@github.com/99soft/t2t.git</url>
+        </site>
+    </distributionManagement>
+
+    <issueManagement>
+        <system>GitHub Issue Management</system>
+        <url>https://github.com/99soft/t2t/issues</url>
+    </issueManagement>
+
     <repositories>
         <repository>
             <id>aduna-repo</id>
