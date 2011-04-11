@@ -49,7 +49,7 @@ public class Runner {
         options.addOption(ENTRYPOINT, true, "URL entrypoint");
         CommandLineParser commandLineParser = new PosixParser();
         CommandLine commandLine = null;
-        if(args.length != 4) {
+        if (args.length != 4) {
             HelpFormatter formatter = new HelpFormatter();
             formatter.printHelp("Runner", options);
             System.exit(-1);
