@@ -19,7 +19,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
 import org.nnsoft.t2t.configuration.MigratorConfiguration;
 import org.nnsoft.t2t.configuration.NamespaceMapping;
 import org.nnsoft.t2t.slicers.Slicer;
@@ -34,6 +33,8 @@ import org.openrdf.model.impl.URIImpl;
 import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import virtuoso.sesame2.driver.VirtuosoRepository;
 
@@ -42,7 +43,7 @@ import virtuoso.sesame2.driver.VirtuosoRepository;
  */
 public final class DefaultMigrator implements Migrator {
 
-    private final static Logger LOGGER = Logger.getLogger(DefaultMigrator.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(DefaultMigrator.class);
 
     private Repository source;
 
