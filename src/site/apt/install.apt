@@ -1,0 +1,65 @@
+                                    ------
+                                    T2T :: Install
+                                    ------
+                                    The 99 Software Foundation
+                                    ------
+                                     2010
+
+~~
+~~   Copyright 2011 The 99 Software Foundation
+~~
+~~   Licensed under the Apache License, Version 2.0 (the "License");
+~~   you may not use this file except in compliance with the License.
+~~   You may obtain a copy of the License at
+~~
+~~       http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~   Unless required by applicable law or agreed to in writing, software
+~~   distributed under the License is distributed on an "AS IS" BASIS,
+~~   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~   See the License for the specific language governing permissions and
+~~   limitations under the License.
+~~
+
+Install T2T
+
+  <T2T> is a Java tool, so you must have <Java> installed in order to proceed. Users need at least the
+  <Java Runtime Environment (JRE)>, the <Java Development Kit (JDK)> is a plus.
+
+  Additional optional installation steps are listed after the platform specific instructions.
+
+* Windows 2000/XP
+
+  [[1]] Unzip the distribution archive, i.e. <<<t2t-1.0-bin.zip>>>> to the directory you wish to install T2T.
+        These instructions assume you chose <<<C:\Program Files\99soft>>>. The subdirectory <<<t2t-1.0-bin>>> will be
+        created from the archive.
+
+  [[2]] Add the <<<T2T_HOME>>> environment variable by opening up the system properties (<<<WinKey>>> + <<<Pause>>>),
+        selecting the <Advanced> tab, and the <Environment Variables> button, then adding the <<<T2T_HOME>>> variable in
+        the user variables with the value <<<C:\Program Files\99soft\t2t-1.0>>>.
+        Be sure to omit any quotation marks around the path even if it contains spaces.
+
+  [[3]] In the same dialog, add the <<<T2T>>> environment variable in the user variables with the value
+        <<<%T2T_HOME%\bin>>>.
+
+  [[4]] In the same dialog, update/create the <Path> environment variable in the user variables and prepend the value
+        <<<%T2T%>>> to add <T2T> available in the command line.
+
+  [[5]] In the same dialog, make sure that <<<JAVA_HOME>>> exists in your user variables or in the system variables and
+        it is set to the location of your JDK, e.g. <<<C:\Program Files\Java\jdk1.5.0_02>>> and that <<<%JAVA_HOME%\bin>>>
+        is in your <Path> environment variable.
+
+* Unix-based Operating Systems (Linux, Solaris and Mac OS X)
+
+  [[1]] Extract the distribution archive, i.e. <<<t2t-bin.tar.gz>>> to the directory you wish to install T2T. These
+        instructions assume you chose <<</usr/local/99soft/t2t-1.0>>>. The subdirectory <<<t2t-1.0>>> will be created
+        from the archive.
+
+  [[2]] In a command terminal, add the <<<T2T_HOME>>> environment variable, e.g. <<<export T2T_HOME=/usr/local/99soft/t2t-1.0>>>.
+
+  [[3]] Add the <<<T2T>>> environment variable, e.g. <<<export T2T=$T2T_HOME/bin>>>.
+
+  [[4]] Add <<<T2T>>> environment variable to your path, e.g. <<<export PATH=$T2T:$PATH>>>.
+
+  [[5]] Make sure that <<<JAVA_HOME>>> is set to the location of your JDK, e.g. export <<<JAVA_HOME=/usr/java/jdk1.5.0_02>>>
+        and that <<<$JAVA_HOME/bin>>> is in your <<<PATH>>> environment variable.
