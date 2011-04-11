@@ -1,0 +1,796 @@
+<api>
+<package name="org.nnsoft.t2t"
+>
+<class name="Runner"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Runner"
+ type="org.nnsoft.t2t.Runner"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="main"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="args" type="java.lang.String[]">
+</parameter>
+</method>
+</class>
+</package>
+<package name="org.nnsoft.t2t.configuration"
+>
+<class name="ConfigurationManager"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="getConfiguration"
+ return="org.nnsoft.t2t.configuration.MigratorConfiguration"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getInstance"
+ return="org.nnsoft.t2t.configuration.ConfigurationManager"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="file" type="java.io.File">
+</parameter>
+</method>
+</class>
+<class name="MigratorConfiguration"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MigratorConfiguration"
+ type="org.nnsoft.t2t.configuration.MigratorConfiguration"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="getCommitRate"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDestinationConnection"
+ return="org.nnsoft.t2t.configuration.MigratorConfiguration.ConnectionParameter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getDestinationGraph"
+ return="org.openrdf.model.URI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getNamespaceMappings"
+ return="java.util.Set&lt;org.nnsoft.t2t.configuration.NamespaceMapping&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getRules"
+ return="java.util.Set&lt;org.nnsoft.t2t.core.Rule&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSlicingClass"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSourceConnection"
+ return="org.nnsoft.t2t.configuration.MigratorConfiguration.ConnectionParameter"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getSourceGraph"
+ return="org.openrdf.model.URI"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="isActiveFiltering"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="setActiveFiltering"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="activeFiltering" type="boolean">
+</parameter>
+</method>
+<method name="setCommitRate"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="commitRate" type="int">
+</parameter>
+</method>
+<method name="setDestinationConnection"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="destinationConnection" type="org.nnsoft.t2t.configuration.MigratorConfiguration.ConnectionParameter">
+</parameter>
+</method>
+<method name="setDestinationGraph"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="destinationGraph" type="org.openrdf.model.URI">
+</parameter>
+</method>
+<method name="setNamespaceMappings"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="namespaceMappings" type="java.util.Set&lt;org.nnsoft.t2t.configuration.NamespaceMapping&gt;">
+</parameter>
+</method>
+<method name="setRules"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rules" type="java.util.Set&lt;org.nnsoft.t2t.core.Rule&gt;">
+</parameter>
+</method>
+<method name="setSlicingClass"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="slicingClass" type="java.lang.String">
+</parameter>
+</method>
+<method name="setSourceConnection"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sourceConnection" type="org.nnsoft.t2t.configuration.MigratorConfiguration.ConnectionParameter">
+</parameter>
+</method>
+<method name="setSourceGraph"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="sourceGraph" type="org.openrdf.model.URI">
+</parameter>
+</method>
+</class>
+<class name="MigratorConfiguration.ConnectionParameter"
+ extends="java.lang.Object"
+ abstract="false"
+ static="true"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MigratorConfiguration.ConnectionParameter"
+ type="org.nnsoft.t2t.configuration.MigratorConfiguration.ConnectionParameter"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="host" type="java.lang.String">
+</parameter>
+<parameter name="port" type="int">
+</parameter>
+<parameter name="user" type="java.lang.String">
+</parameter>
+<parameter name="password" type="java.lang.String">
+</parameter>
+</constructor>
+<method name="getHost"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPassword"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getPort"
+ return="int"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getUser"
+ return="java.lang.String"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+<class name="NamespaceMapping"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="NamespaceMapping"
+ type="org.nnsoft.t2t.configuration.NamespaceMapping"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="from" type="org.openrdf.model.impl.URIImpl">
+</parameter>
+<parameter name="to" type="org.openrdf.model.impl.URIImpl">
+</parameter>
+</constructor>
+<method name="getFrom"
+ return="org.openrdf.model.impl.URIImpl"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+<method name="getTo"
+ return="org.openrdf.model.impl.URIImpl"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</method>
+</class>
+</package>
+<package name="org.nnsoft.t2t.core"
+>
+<class name="DefaultMigrator"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="true"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.nnsoft.t2t.core.Migrator">
+</implements>
+<constructor name="DefaultMigrator"
+ type="org.nnsoft.t2t.core.DefaultMigrator"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="configuration" type="org.nnsoft.t2t.configuration.MigratorConfiguration">
+</parameter>
+</constructor>
+<method name="addRule"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rule" type="org.nnsoft.t2t.core.Rule">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+<method name="run"
+ return="org.nnsoft.t2t.core.MigrationStats"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="entryPoint" type="org.openrdf.model.URI">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+<method name="setDestinationRepository"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="repository" type="org.openrdf.repository.Repository">
+</parameter>
+<parameter name="graph" type="org.openrdf.model.URI">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+<method name="setSourceRepository"
+ return="void"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="repository" type="org.openrdf.repository.Repository">
+</parameter>
+<parameter name="graph" type="org.openrdf.model.URI">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+</class>
+<class name="MigrationStats"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MigrationStats"
+ type="org.nnsoft.t2t.core.MigrationStats"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<interface name="Migrator"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="addRule"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="rule" type="org.nnsoft.t2t.core.Rule">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+<method name="run"
+ return="org.nnsoft.t2t.core.MigrationStats"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="entrypoint" type="org.openrdf.model.URI">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+<method name="setDestinationRepository"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="repository" type="org.openrdf.repository.Repository">
+</parameter>
+<parameter name="graph" type="org.openrdf.model.URI">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+<method name="setSourceRepository"
+ return="void"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="repository" type="org.openrdf.repository.Repository">
+</parameter>
+<parameter name="graph" type="org.openrdf.model.URI">
+</parameter>
+<exception name="MigratorException" type="org.nnsoft.t2t.core.MigratorException">
+</exception>
+</method>
+</interface>
+<class name="MigratorException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="MigratorException"
+ type="org.nnsoft.t2t.core.MigratorException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+<constructor name="MigratorException"
+ type="org.nnsoft.t2t.core.MigratorException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+<parameter name="e" type="java.lang.Exception">
+</parameter>
+</constructor>
+</class>
+<class name="Rule"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="Rule"
+ type="org.nnsoft.t2t.core.Rule"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="match" type="org.openrdf.query.algebra.StatementPattern">
+</parameter>
+<parameter name="apply" type="java.util.Set&lt;org.openrdf.query.algebra.StatementPattern&gt;">
+</parameter>
+</constructor>
+<method name="apply"
+ return="java.util.Set&lt;org.openrdf.model.Statement&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="statement" type="org.openrdf.model.Statement">
+</parameter>
+<exception name="RuleExecutionException" type="org.nnsoft.t2t.core.RuleExecutionException">
+</exception>
+</method>
+<method name="match"
+ return="boolean"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="statement" type="org.openrdf.model.Statement">
+</parameter>
+<exception name="RuleExecutionException" type="org.nnsoft.t2t.core.RuleExecutionException">
+</exception>
+</method>
+</class>
+<class name="RuleExecurionReport"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="RuleExecurionReport"
+ type="org.nnsoft.t2t.core.RuleExecurionReport"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+<class name="RuleExecutionException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="RuleExecutionException"
+ type="org.nnsoft.t2t.core.RuleExecutionException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="message" type="java.lang.String">
+</parameter>
+</constructor>
+</class>
+</package>
+<package name="org.nnsoft.t2t.slicers"
+>
+<class name="FonteRSSSlicer"
+ extends="java.lang.Object"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<implements name="org.nnsoft.t2t.slicers.Slicer">
+</implements>
+<constructor name="FonteRSSSlicer"
+ type="org.nnsoft.t2t.slicers.FonteRSSSlicer"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+<method name="slice"
+ return="java.util.List&lt;org.openrdf.model.Statement&gt;"
+ abstract="false"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="entrypoint" type="org.openrdf.model.URI">
+</parameter>
+<parameter name="repositoryConnection" type="org.openrdf.repository.RepositoryConnection">
+</parameter>
+<parameter name="sourceGraph" type="org.openrdf.model.URI">
+</parameter>
+<exception name="SlicerException" type="org.nnsoft.t2t.slicers.SlicerException">
+</exception>
+</method>
+</class>
+<interface name="Slicer"
+ abstract="true"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<method name="slice"
+ return="java.util.List&lt;org.openrdf.model.Statement&gt;"
+ abstract="true"
+ native="false"
+ synchronized="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<parameter name="entrypoint" type="org.openrdf.model.URI">
+</parameter>
+<parameter name="repositoryConnection" type="org.openrdf.repository.RepositoryConnection">
+</parameter>
+<parameter name="sourceGraph" type="org.openrdf.model.URI">
+</parameter>
+<exception name="SlicerException" type="org.nnsoft.t2t.slicers.SlicerException">
+</exception>
+</method>
+</interface>
+<class name="SlicerException"
+ extends="java.lang.Exception"
+ abstract="false"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+<constructor name="SlicerException"
+ type="org.nnsoft.t2t.slicers.SlicerException"
+ static="false"
+ final="false"
+ deprecated="not deprecated"
+ visibility="public"
+>
+</constructor>
+</class>
+</package>
+</api>

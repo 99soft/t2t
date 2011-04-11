@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>T2T: RDF graph Migration - T2T :: Home</title>
+    <title>T2T: RDF graph Migration - T2T :: Install</title>
     <link rel="stylesheet" href="./css/maven-theme.css" type="text/css" />
     <link rel="stylesheet" href="./css/maven-base.css" type="text/css"/>
     <link rel="stylesheet" href="./css/prettify.css" type="text/css"/>
@@ -56,14 +56,14 @@
                                 <h5>T2T: RDF graph Migration</h5>
                   <ul>
                   <li class="none">
-            <strong>Home</strong>
-          </li>
+                          <a href="index.html" title="Home">Home</a>
+            </li>
                   <li class="none">
                           <a href="download.html" title="Download">Download</a>
             </li>
                   <li class="none">
-                          <a href="install.html" title="Install">Install</a>
-            </li>
+            <strong>Install</strong>
+          </li>
                   <li class="none">
                           <a href="run.html" title="Run">Run</a>
             </li>
@@ -82,47 +82,9 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                                                    <li class="expanded">
+                                                                                                                                                                                                                                                                          <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
-                      <li class="none">
-            <strong>About</strong>
-          </li>
-                      <li class="none">
-                          <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-            </li>
-                      <li class="none">
-                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
-            </li>
-                      <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                      <li class="none">
-                          <a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-            </li>
-                      <li class="none">
-                          <a href="mail-lists.html" title="Mailing Lists">Mailing Lists</a>
-            </li>
-                      <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-            </li>
-                      <li class="none">
-                          <a href="license.html" title="Project License">Project License</a>
-            </li>
-                      <li class="none">
-                          <a href="plugins.html" title="Project Plugins">Project Plugins</a>
-            </li>
-                      <li class="none">
-                          <a href="project-summary.html" title="Project Summary">Project Summary</a>
-            </li>
-                      <li class="none">
-                          <a href="team-list.html" title="Project Team">Project Team</a>
-            </li>
-                      <li class="none">
-                          <a href="source-repository.html" title="Source Repository">Source Repository</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                                                                                                                                                     <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
@@ -166,7 +128,7 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <!--  --><!-- Copyright 2011 The 99 Software Foundation --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Welcome to T2T!<a name="Welcome_to_T2T"></a></h2><p>T2T stands for &quot;triple to triple&quot;, is a command line tool to migrate a set of RDF triples from one graph to another.</p></div>
+        <!--  --><!-- Copyright 2011 The 99 Software Foundation --><!--  --><!-- Licensed under the Apache License, Version 2.0 (the "License"); --><!-- you may not use this file except in compliance with the License. --><!-- You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, software --><!-- distributed under the License is distributed on an "AS IS" BASIS, --><!-- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. --><!-- See the License for the specific language governing permissions and --><!-- limitations under the License. --><!--  --><div class="section"><h2>Install T2T<a name="Install_T2T"></a></h2><p><i>T2T</i> is a Java tool, so you must have <i>Java</i> installed in order to proceed. Users need at least the <i>Java Runtime Environment (JRE)</i>, the <i>Java Development Kit (JDK)</i> is a plus.</p><p>Additional optional installation steps are listed after the platform specific instructions.</p><div class="section"><h3>Windows 2000/XP<a name="Windows_2000XP"></a></h3><ol style="list-style-type: decimal"><li>Unzip the distribution archive, i.e. <tt>t2t-1.0-bin.zip</tt>&gt; to the directory you wish to install T2T. These instructions assume you chose <tt>C:\Program Files\99soft</tt>. The subdirectory <tt>t2t-1.0-bin</tt> will be created from the archive.</li><li>Add the <tt>T2T_HOME</tt> environment variable by opening up the system properties (<tt>WinKey</tt> + <tt>Pause</tt>), selecting the <i>Advanced</i> tab, and the <i>Environment Variables</i> button, then adding the <tt>T2T_HOME</tt> variable in the user variables with the value <tt>C:\Program Files\99soft\t2t-1.0</tt>. Be sure to omit any quotation marks around the path even if it contains spaces.</li><li>In the same dialog, add the <tt>T2T</tt> environment variable in the user variables with the value <tt>%T2T_HOME%\bin</tt>.</li><li>In the same dialog, update/create the <i>Path</i> environment variable in the user variables and prepend the value <tt>%T2T%</tt> to add <i>T2T</i> available in the command line.</li><li>In the same dialog, make sure that <tt>JAVA_HOME</tt> exists in your user variables or in the system variables and it is set to the location of your JDK, e.g. <tt>C:\Program Files\Java\jdk1.5.0_02</tt> and that <tt>%JAVA_HOME%\bin</tt> is in your <i>Path</i> environment variable.</li></ol></div><div class="section"><h3>Unix-based Operating Systems (Linux, Solaris and Mac OS X)<a name="Unix-based_Operating_Systems_Linux_Solaris_and_Mac_OS_X"></a></h3><ol style="list-style-type: decimal"><li>Extract the distribution archive, i.e. <tt>t2t-bin.tar.gz</tt> to the directory you wish to install T2T. These instructions assume you chose <tt>/usr/local/99soft/t2t-1.0</tt>. The subdirectory <tt>t2t-1.0</tt> will be created from the archive.</li><li>In a command terminal, add the <tt>T2T_HOME</tt> environment variable, e.g. <tt>export T2T_HOME=/usr/local/99soft/t2t-1.0</tt>.</li><li>Add the <tt>T2T</tt> environment variable, e.g. <tt>export T2T=$T2T_HOME/bin</tt>.</li><li>Add <tt>T2T</tt> environment variable to your path, e.g. <tt>export PATH=$T2T:$PATH</tt>.</li><li>Make sure that <tt>JAVA_HOME</tt> is set to the location of your JDK, e.g. export <tt>JAVA_HOME=/usr/java/jdk1.5.0_02</tt> and that <tt>$JAVA_HOME/bin</tt> is in your <tt>PATH</tt> environment variable.</li></ol></div></div>
       </div>
     </div>
     <div class="clear">
