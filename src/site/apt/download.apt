@@ -26,12 +26,22 @@ Download T2T
   T2T is distributed in several formats for your convenience. Use a source archive if you intend to build T2T yourself.
   Otherwise, simply pick a ready-made binary distribution and follow the installation instructions.
 
+  In order to guard against corrupted downloads/installations, it is highly recommended to verify the signature of the
+  release bundles against the public {{{https://github.com/99soft/infra/blob/master/KEYS}KEYS}} used by the
+  99 Software Foundation developers.
+
+  For example, when using {{{http://www.gnupg.org/}GNU Privacy Guard}} you verify the signature using the following command:
+
++--------------------------------------+
+$ gpg --verify t2t-1.0-bin.tar.gz.asc t2t-1.0-bin.tar.gz
++--------------------------------------+
+
 * T2T 1.0
 
-*----------*--------------*----------------:
-| |  | Download |
-*----------*--------------*----------------:
-| T2T 1.0 (Binary tar.gz) | {{{./bin/1.0/t2t-1.0-bin.tar.gz}t2t-1.0-bin.tar.gz}} |
-*----------*--------------*----------------:
-| T2T 1.0 (Binary zip) | {{{./bin/1.0/t2t-1.0-bin.zip}t2t-1.0-bin.zip}} |
-*----------*--------------*----------------:
+*----------*--------------*----------------*----------------*
+|          | Download     | Checksum       | Signature      |
+*----------+--------------+----------------+----------------+
+| T2T 1.0 (Binary tar.gz) | {{{./bin/1.0/t2t-1.0-bin.tar.gz}t2t-1.0-bin.tar.gz}} | {{{./bin/1.0/t2t-1.0-bin.tar.gz.md5}t2t-1.0-bin.tar.gz.md5}} | {{{./bin/1.0/t2t-1.0-bin.tar.gz.asc}t2t-1.0-bin.tar.gz.asc}} |
+*----------+--------------+----------------+----------------+
+| T2T 1.0 (Binary zip) | {{{./bin/1.0/t2t-1.0-bin.zip}t2t-1.0-bin.zip}} | {{{./bin/1.0/t2t-1.0-bin.zip.md5}t2t-1.0-bin.zip.md5}} | {{{./bin/1.0/t2t-1.0-bin.zip.asc}t2t-1.0-bin.zip.asc}} |
+*----------+--------------+----------------+----------------+
