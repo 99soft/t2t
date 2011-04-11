@@ -57,6 +57,9 @@
         <fileSet>
             <directory>${project.build.directory}/appassembler/lib/</directory>
             <outputDirectory>/lib</outputDirectory>
+            <excludes>
+                <exclude>*.xml</exclude>
+            </excludes>
         </fileSet>
     </fileSets>
 
