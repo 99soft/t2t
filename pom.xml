@@ -209,10 +209,10 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <outputDirectory>${project.build.directory}/site/bin/${project.version}</outputDirectory>
+                    <attach>false</attach>
                     <descriptors>
                         <descriptor>${basedir}/src/main/assembly/bin.xml</descriptor>
-                        <outputDirectory>${project.build.directory}/site/bin/${project.version}</outputDirectory>
-                        <attach>false</attach>
                     </descriptors>
                 </configuration>
             </plugin>
