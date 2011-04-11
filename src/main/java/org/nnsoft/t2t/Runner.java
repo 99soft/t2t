@@ -51,31 +51,26 @@ public class Runner {
         options.addOption("v", "version", false, "print the version information and exit.");
         options.addOption("c", CONFIGURATION, true, "XML Configuration file.");
         options.addOption("e", ENTRYPOINT, true, "URL entrypoint");
+
         CommandLineParser commandLineParser = new PosixParser();
-        CommandLine commandLine = null;
 
         if (args.length == 0) {
-            HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("t2t", options);
-            System.exit(-1);
+            printHelp(options);
         }
 
         /*
          * Parse the configuration file and instantiates all the needed dependencies
          */
+        CommandLine commandLine = null;
         try {
             commandLine = commandLineParser.parse(options, args);
         } catch (ParseException e) {
-            logger.error("Error while parsing arguments", e);
-            HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("t2t", options);
-            System.exit(-1);
+            System.err.printf("Error while parsing arguments: %s%n", e.getMessage());
+            printHelp(options);
         }
 
         if (commandLine.hasOption('h') || commandLine.hasOption("help")) {
-            HelpFormatter formatter = new HelpFormatter();
-            formatter.printHelp("t2t", options);
-            System.exit(-1);
+            printHelp(options);
         }
 
         if (commandLine.hasOption('v') || commandLine.hasOption("version")) {
@@ -115,8 +110,30 @@ public class Runner {
             System.exit(-1);
         }
 
-        String confFilePath = commandLine.getOptionValue(CONFIGURATION);
-        String entryPoint = commandLine.getOptionValue(ENTRYPOINT);
+        String confFilePath = null;
+        if (commandLine.hasOption('c')) {
+            confFilePath = commandLine.getOptionValue('c');
+        } else if (commandLine.hasOption(CONFIGURATION)) {
+            confFilePath = commandLine.getOptionValue(CONFIGURATION);
+        }
+
+        if (confFilePath == null) {
+            System.err.println("'-c' xor '--configuration' parameter has to be specified");
+            printHelp(options);
+        }
+
+        String entryPoint = null;
+        if (commandLine.hasOption('e')) {
+            entryPoint = commandLine.getOptionValue('e');
+        } else if (commandLine.hasOption(ENTRYPOINT)) {
+            entryPoint = commandLine.getOptionValue(ENTRYPOINT);
+        }
+
+        if (entryPoint == null) {
+            System.err.println("'-e' xor '--entrypoint' parameter has to be specified");
+            printHelp(options);
+        }
+
         logger.info("Loading configuration from: '{}'", confFilePath);
         MigratorConfiguration configuration =
                 ConfigurationManager.getInstance(new File(confFilePath)).getConfiguration();
@@ -131,6 +148,12 @@ public class Runner {
         } finally {
             logger.info("Migration complete");
         }
+    }
+
+    private static final void printHelp(Options options) {
+        HelpFormatter formatter = new HelpFormatter();
+        formatter.printHelp("t2t", options);
+        System.exit(-1);
     }
 
 }
