@@ -117,7 +117,7 @@ public class Runner {
 
         String confFilePath = commandLine.getOptionValue(CONFIGURATION);
         String entryPoint = commandLine.getOptionValue(ENTRYPOINT);
-        logger.info("Loading configuration from: '" + confFilePath + "'");
+        logger.info("Loading configuration from: '{}'", confFilePath);
         MigratorConfiguration configuration =
                 ConfigurationManager.getInstance(new File(confFilePath)).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
