@@ -96,7 +96,9 @@ public class Runner {
                 }
             }
 
-            System.out.printf("99soft T2T %s%n", properties.getProperty("version"));
+            System.out.printf("99soft T2T %s (%s)%n",
+                    properties.getProperty("version"),
+                    properties.getProperty("build"));
             System.out.printf("Java version: %s, vendor: %s%n",
                     System.getProperty("java.version"),
                     System.getProperty("java.vendor"));
