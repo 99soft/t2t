@@ -3,7 +3,7 @@
                                     ------
                                     The 99 Software Foundation
                                     ------
-                                     2010
+                                     2011
 
 ~~
 ~~   Copyright 2011 The 99 Software Foundation
@@ -25,3 +25,5 @@ Welcome to T2T!
 
   T2T stands for "triple to triple", is a command line tool to migrate a set of
   RDF triples from one graph to another.
+
+  [./images/t2t-migration.png]
