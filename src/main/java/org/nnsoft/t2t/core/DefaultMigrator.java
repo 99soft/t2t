@@ -97,7 +97,7 @@ public final class DefaultMigrator implements Migrator {
         } catch (RepositoryException e) {
             throw new MigratorException("");
         }
-        LOGGER.info("Connection to: '" + sourceGraph + "' has been correctly established");
+        LOGGER.info("Connection to: '{}' has been correctly established", sourceGraph);
         List<Statement> initialStatements;
         try {
             initialStatements =
@@ -117,7 +117,7 @@ public final class DefaultMigrator implements Migrator {
         } catch (RepositoryException e) {
             throw new MigratorException("");
         }
-        LOGGER.info("Connection to: '" + destinationGraph + "' has been correctly closed");
+        LOGGER.info("Connection to: '{}' has been correctly closed", destinationGraph);
         int counter = 0;
         final int MAX = configuration.getCommitRate(); // every MAX statements, commit!
         try {
