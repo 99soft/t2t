@@ -25,4 +25,12 @@ public class SlicerException extends Exception {
      */
     private static final long serialVersionUID = 1L;
 
+    public SlicerException() {
+        super();
+    }
+
+    public SlicerException(String message) {
+        super(message);
+    }
+
 }
