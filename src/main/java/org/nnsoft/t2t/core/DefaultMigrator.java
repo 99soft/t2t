@@ -171,8 +171,14 @@ public final class DefaultMigrator implements Migrator {
             URI sourceGraph,
             RepositoryConnection repositoryConnection
     ) throws ClassNotFoundException, IllegalAccessException, InstantiationException, SlicerException {
-        Class slicerClass = Class.forName(slicingClass);
-        Slicer slicer = (Slicer) slicerClass.newInstance();
+        Class<?> supposedSlicerType = Class.forName(slicingClass);
+        if (!Slicer.class.isAssignableFrom(supposedSlicerType)) {
+            throw new SlicerException(slicingClass + " is not assignable to " + Slicer.class.getName());
+        }
+
+        @SuppressWarnings("unchecked") // checked before
+        Class<Slicer> slicerClass = (Class<Slicer>) supposedSlicerType;
+        Slicer slicer = slicerClass.newInstance();
         return slicer.slice(entryPoint, repositoryConnection, sourceGraph);
     }
 
