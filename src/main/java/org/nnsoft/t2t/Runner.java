@@ -15,25 +15,19 @@
  */
 package org.nnsoft.t2t;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.CommandLineParser;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Options;
-import org.apache.commons.cli.ParseException;
-import org.apache.commons.cli.PosixParser;
 import org.nnsoft.t2t.configuration.ConfigurationManager;
 import org.nnsoft.t2t.configuration.MigratorConfiguration;
 import org.nnsoft.t2t.core.DefaultMigrator;
 import org.nnsoft.t2t.core.Migrator;
 import org.nnsoft.t2t.core.MigratorException;
-import org.openrdf.model.impl.URIImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.beust.jcommander.JCommander;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
@@ -43,37 +37,18 @@ public class Runner {
     public static void main(String[] args) {
         final Logger logger = LoggerFactory.getLogger(Runner.class);
 
-        final String CONFIGURATION = "configuration";
-        final String ENTRYPOINT = "entrypoint";
+        RunnerOptions options = new RunnerOptions();
 
-        Options options = new Options();
-        options.addOption("h", "help", false, "print this message.");
-        options.addOption("v", "version", false, "print the version information and exit.");
-        options.addOption("c", CONFIGURATION, true, "XML Configuration file.");
-        options.addOption("e", ENTRYPOINT, true, "URL entrypoint");
+        JCommander jCommander = new JCommander(options);
+        jCommander.setProgramName("t2t");
+        jCommander.parseWithoutValidation(args);
 
-        CommandLineParser commandLineParser = new PosixParser();
-
-        if (args.length == 0) {
-            printHelp(options);
+        if (options.isPrintHelp()) {
+            jCommander.usage();
+            System.exit(-1);
         }
 
-        /*
-         * Parse the configuration file and instantiates all the needed dependencies
-         */
-        CommandLine commandLine = null;
-        try {
-            commandLine = commandLineParser.parse(options, args);
-        } catch (ParseException e) {
-            System.err.printf("Error while parsing arguments: %s%n", e.getMessage());
-            printHelp(options);
-        }
-
-        if (commandLine.hasOption('h') || commandLine.hasOption("help")) {
-            printHelp(options);
-        }
-
-        if (commandLine.hasOption('v') || commandLine.hasOption("version")) {
+        if (options.isPrintVersion()) {
             Properties properties = new Properties();
             InputStream input = Runner.class.getClassLoader().getResourceAsStream("META-INF/maven/org.99soft/t2t/pom.properties");
 
@@ -111,50 +86,25 @@ public class Runner {
             System.exit(-1);
         }
 
-        String confFilePath = null;
-        if (commandLine.hasOption('c')) {
-            confFilePath = commandLine.getOptionValue('c');
-        } else if (commandLine.hasOption(CONFIGURATION)) {
-            confFilePath = commandLine.getOptionValue(CONFIGURATION);
+        if (options.getConfigurationFile() == null || options.getEntryPoint() == null) {
+            jCommander.usage();
+            System.exit(-1);
         }
 
-        if (confFilePath == null) {
-            System.err.println("'-c' xor '--configuration' parameter has to be specified");
-            printHelp(options);
-        }
-
-        String entryPoint = null;
-        if (commandLine.hasOption('e')) {
-            entryPoint = commandLine.getOptionValue('e');
-        } else if (commandLine.hasOption(ENTRYPOINT)) {
-            entryPoint = commandLine.getOptionValue(ENTRYPOINT);
-        }
-
-        if (entryPoint == null) {
-            System.err.println("'-e' xor '--entrypoint' parameter has to be specified");
-            printHelp(options);
-        }
-
-        logger.info("Loading configuration from: '{}'", confFilePath);
+        logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
         MigratorConfiguration configuration =
-                ConfigurationManager.getInstance(new File(confFilePath)).getConfiguration();
+                ConfigurationManager.getInstance(options.getConfigurationFile()).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
 
         logger.info("Starting migration...");
         try {
-            migrator.run(new URIImpl(entryPoint));
+            migrator.run(options.getEntryPoint());
         } catch (MigratorException e) {
             logger.error("Error during migration process", e);
             System.exit(-1);
         } finally {
             logger.info("Migration complete");
         }
-    }
-
-    private static final void printHelp(Options options) {
-        HelpFormatter formatter = new HelpFormatter();
-        formatter.printHelp("t2t", options);
-        System.exit(-1);
     }
 
     private static final String getOsFamily() {
