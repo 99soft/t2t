@@ -28,6 +28,10 @@ import org.nnsoft.t2t.core.MigratorException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.classic.joran.JoranConfigurator;
+import ch.qos.logback.core.joran.spi.JoranException;
+
 import com.beust.jcommander.JCommander;
 
 /**
@@ -104,6 +108,20 @@ public class Runner {
 
         // logging stuff
         final Logger logger = LoggerFactory.getLogger(Runner.class);
+
+        // assume SLF4J is bound to logback in the current environment
+        final LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+
+        try {
+            JoranConfigurator configurator = new JoranConfigurator();
+            configurator.setContext(lc);
+            // the context was probably already configured by default configuration 
+            // rules
+            lc.reset();
+            configurator.doConfigure(Runner.class.getClassLoader().getResourceAsStream("logback-config.xml"));
+        } catch (JoranException je) {
+            // StatusPrinter should handle this
+        }
 
         logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
 
