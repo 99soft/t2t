@@ -104,7 +104,11 @@ public class Runner {
                 ConfigurationManager.getInstance(options.getConfigurationFile()).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
 
-        logger.info("Configuration load, starting migration...");
+        logger.info("------------------------------------------------------------------------");
+        logger.info("T2T MIGRATION migrating RDF graph from '{}' to '{}'",
+                configuration.getSourceGraph(),
+                configuration.getDestinationGraph());
+        logger.info("------------------------------------------------------------------------");
 
         long start = System.currentTimeMillis();
         int exit = 0;
