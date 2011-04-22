@@ -179,7 +179,7 @@
                 <configuration>
                     <repositoryLayout>flat</repositoryLayout>
                     <repositoryName>lib</repositoryName>
-                    <extraJvmArguments>-Xms2048m -Xmx2048m -XX:PermSize=128m -XX:-UseGCOverheadLimit</extraJvmArguments>
+                    <extraJvmArguments>-Xms500m -Xmx500m -XX:PermSize=128m -XX:-UseGCOverheadLimit</extraJvmArguments>
                     <programs>
                         <program>
                             <mainClass>org.nnsoft.t2t.Runner</mainClass>
