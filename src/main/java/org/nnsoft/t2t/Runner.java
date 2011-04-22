@@ -17,6 +17,7 @@ package org.nnsoft.t2t;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.Properties;
 
 import org.nnsoft.t2t.configuration.ConfigurationManager;
@@ -92,6 +93,9 @@ public class Runner {
         }
 
         logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
+        long start = System.currentTimeMillis();
+        int exit = 0;
+
         MigratorConfiguration configuration =
                 ConfigurationManager.getInstance(options.getConfigurationFile()).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
@@ -101,9 +105,21 @@ public class Runner {
             migrator.run(options.getEntryPoint());
         } catch (MigratorException e) {
             logger.error("Error during migration process", e);
-            System.exit(-1);
+            exit = -1;
         } finally {
-            logger.info("Migration complete");
+            logger.info("------------------------------------------------------------------------");
+            logger.info("T2T MIGRATION {}", (exit < 0) ? "FAILURE" : "SUCCESS");
+            logger.info("Total time: {}s", ((System.currentTimeMillis() - start) / 1000));
+            logger.info("Finished at: {}", new Date());
+
+            Runtime runtime = Runtime.getRuntime();
+            logger.info("Final Memory: {}M/{}M",
+                    (runtime.totalMemory() - runtime.freeMemory()) / 1024,
+                    runtime.totalMemory() / 1024);
+
+            logger.info("------------------------------------------------------------------------");
+
+            System.exit(exit);
         }
     }
 
