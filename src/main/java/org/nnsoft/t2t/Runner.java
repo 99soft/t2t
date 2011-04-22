@@ -87,24 +87,32 @@ public class Runner {
             System.exit(-1);
         }
 
-        if (options.getConfigurationFile() == null || options.getEntryPoint() == null) {
-            jCommander.usage();
+        if (!options.getConfigurationFile().exists() || options.getConfigurationFile().isDirectory()) {
+            System.out.println(String.format("Non-readable XML Configuration file: %s (No such file).",
+                    options.getConfigurationFile()));
+            System.exit(-1);
+        }
+
+        if (options.getEntryPoint() == null) {
+            System.out.println("No URL entrypoint has been specified for this migration.");
             System.exit(-1);
         }
 
         logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
-        long start = System.currentTimeMillis();
-        int exit = 0;
 
         MigratorConfiguration configuration =
                 ConfigurationManager.getInstance(options.getConfigurationFile()).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
 
-        logger.info("Starting migration...");
+        logger.info("Configuration load, starting migration...");
+
+        long start = System.currentTimeMillis();
+        int exit = 0;
+
         try {
             migrator.run(options.getEntryPoint());
         } catch (MigratorException e) {
-            logger.error("Error during migration process", e);
+            logger.error("An error occurred during the migration process", e);
             exit = -1;
         } finally {
             logger.info("------------------------------------------------------------------------");
