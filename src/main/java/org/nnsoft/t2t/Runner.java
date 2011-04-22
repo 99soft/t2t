@@ -104,11 +104,13 @@ public class Runner {
                 ConfigurationManager.getInstance(options.getConfigurationFile()).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
 
+        logger.info("");
         logger.info("------------------------------------------------------------------------");
         logger.info("T2T MIGRATION migrating RDF graph from '{}' to '{}'",
                 configuration.getSourceGraph(),
                 configuration.getDestinationGraph());
         logger.info("------------------------------------------------------------------------");
+        logger.info("");
 
         long start = System.currentTimeMillis();
         int exit = 0;
@@ -119,6 +121,7 @@ public class Runner {
             logger.error("An error occurred during the migration process", e);
             exit = -1;
         } finally {
+            logger.info("");
             logger.info("------------------------------------------------------------------------");
             logger.info("T2T MIGRATION {}", (exit < 0) ? "FAILURE" : "SUCCESS");
             logger.info("Total time: {}s", ((System.currentTimeMillis() - start) / 1000));
