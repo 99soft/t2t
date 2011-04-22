@@ -36,8 +36,6 @@ import com.beust.jcommander.JCommander;
 public class Runner {
 
     public static void main(String[] args) {
-        final Logger logger = LoggerFactory.getLogger(Runner.class);
-
         RunnerOptions options = new RunnerOptions();
 
         JCommander jCommander = new JCommander(options);
@@ -103,6 +101,9 @@ public class Runner {
         System.out.println(" / /_/ / /_/ / ___/ __ \\/ /_/ __/    / /  __/ / / /");
         System.out.println(" \\__, /\\__, (__  ) /_/ / __/ /_     / /  / __/ / /");
         System.out.println("/____//____/____/\\____/_/  \\__/    /_/  /____//_/\n");
+
+        // logging stuff
+        final Logger logger = LoggerFactory.getLogger(Runner.class);
 
         logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
 
