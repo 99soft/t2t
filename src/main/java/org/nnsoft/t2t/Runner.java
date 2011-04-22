@@ -98,6 +98,12 @@ public class Runner {
             System.exit(-1);
         }
 
+        System.out.println("   ____  ____             ______     _________  ______");
+        System.out.println("  / __ \\/ __ \\_________  / __/ /_   /_  __/__ \\/_  __/");
+        System.out.println(" / /_/ / /_/ / ___/ __ \\/ /_/ __/    / /  __/ / / /");
+        System.out.println(" \\__, /\\__, (__  ) /_/ / __/ /_     / /  / __/ / /");
+        System.out.println("/____//____/____/\\____/_/  \\__/    /_/  /____//_/\n");
+
         logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
 
         MigratorConfiguration configuration =
