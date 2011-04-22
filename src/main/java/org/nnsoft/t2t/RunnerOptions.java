@@ -27,23 +27,22 @@ import com.beust.jcommander.Parameter;
  */
 public final class RunnerOptions {
 
-    @Parameter(names = { "-h", "--help" }, description = "print this message.")
+    @Parameter(names = { "-h", "--help" }, description = "Display help information.")
     private boolean printHelp;
 
-    @Parameter(names = { "-v", "--version" }, description = "print the version information and exit.")
+    @Parameter(names = { "-v", "--version" }, description = "Display version information.")
     private boolean printVersion;
 
     @Parameter(
         names = { "-c", "--configuration" },
-        description = "XML Configuration file.",
-        converter = FileConverter.class,
-        required = true
+        description = "Force the use of an alternate XML Configuration file.",
+        converter = FileConverter.class
     )
-    private File configurationFile;
+    private File configurationFile = new File(System.getProperty("user.dir"), "t2t-config.xml");
 
     @Parameter(
         names = { "-e", "--entrypoint" },
-        description = "URL entrypoint.",
+        description = "The URL entrypoint.",
         converter = URIImplConverter.class,
         required = true
     )
