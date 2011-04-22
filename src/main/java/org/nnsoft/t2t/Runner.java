@@ -122,8 +122,8 @@ public class Runner {
 
             Runtime runtime = Runtime.getRuntime();
             logger.info("Final Memory: {}M/{}M",
-                    (runtime.totalMemory() - runtime.freeMemory()) / 1024,
-                    runtime.totalMemory() / 1024);
+                    (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024),
+                    runtime.totalMemory() / (1024 * 1024));
 
             logger.info("------------------------------------------------------------------------");
 
