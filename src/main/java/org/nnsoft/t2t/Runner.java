@@ -120,10 +120,11 @@ public class Runner {
             logger.info("Total time: {}s", ((System.currentTimeMillis() - start) / 1000));
             logger.info("Finished at: {}", new Date());
 
-            Runtime runtime = Runtime.getRuntime();
+            final Runtime runtime = Runtime.getRuntime();
+            final int megaUnit = 1024 * 1024;
             logger.info("Final Memory: {}M/{}M",
-                    (runtime.totalMemory() - runtime.freeMemory()) / (1024 * 1024),
-                    runtime.totalMemory() / (1024 * 1024));
+                    (runtime.totalMemory() - runtime.freeMemory()) / megaUnit,
+                    runtime.totalMemory() / megaUnit);
 
             logger.info("------------------------------------------------------------------------");
 
