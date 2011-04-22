@@ -23,4 +23,54 @@
 
 Run T2T
 
-  TODO
+* Installation
+
+  <T2T is a Java tool>, so you must have {{{http://www.oracle.com/technetwork/java/index.html}Java}} installed in order
+  to proceed.
+
+  First, {{{./download.html}download T2T}} and follow the {{{./install.html}installation instructions}}. After that,
+  type the following in a terminal or in a command prompt:
+
++--------------------------------------+
+t2t --version
++--------------------------------------+
+
+It should print out your installed version of Maven, for example:
+
++--------------------------------------+
+99soft T2T 1.0-SNAPSHOT (2011-04-22 22:13:22+0200)
+Java version: 1.6.0_24, vendor: Apple Inc.
+Java home: /XXX/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+Default locale: en_US, platform encoding: MacRoman
+OS name: "Mac OS X", version: "10.6.6", arch: "x86_64", family: "mac"
++--------------------------------------+
+
+* The T2T XML Configuration file
+
+  The <<<t2t-config.xml>>> file is the core of a migration in T2T. It is a single configuration file that contains the
+  majority of information required to migrate an RDF graph in just the way you want. The <t2t-config> is huge and can be
+  daunting in its complexity, but it is not necessary to understand all of the intricacies just yet to use it effectively.
+
+  A common <<<t2t-config.xml>>> file could be:
+
++--------------------------------------+
+
++--------------------------------------+
+
+* Start the Migration
+
++--------------------------------------+
+t2t -e http://collective.com/resources/web
++--------------------------------------+
+
+  The command line will print out various actions, and end with the following:
+
++--------------------------------------+
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] T2T MIGRATION SUCCESS
+[INFO] Total time: 10s
+[INFO] Finished at: Fri Apr 22 22:14:50 CEST 2011
+[INFO] Final Memory: 14M/493M
+[INFO] ------------------------------------------------------------------------
++--------------------------------------+
