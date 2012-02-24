@@ -38,6 +38,7 @@
     </file>
     <file>
       <source>README</source>
+      <filtered>true</filtered>
     </file>
   </files>
 

@@ -4,7 +4,7 @@
   What is it?
   -----------
 
-  T2T (triple to triple) is an RDF graphs migration tool.
+  ${project.description}
 
   Documentation
   -------------
