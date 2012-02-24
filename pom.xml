@@ -203,7 +203,6 @@
           </execution>
         </executions>
         <configuration>
-          <outputDirectory>${project.build.directory}/site/bin/${project.version}</outputDirectory>
           <attach>true</attach>
           <descriptors>
             <descriptor>${basedir}/src/main/assembly/bin.xml</descriptor>
