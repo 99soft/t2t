@@ -32,6 +32,7 @@
   <name>T2T: RDF graph Migration</name>
   <description>T2T (triple to triple) is an RDF graphs migration tool.</description>
   <url>http://99soft.github.com/${project.artifactId}/</url>
+  <inceptionYear>2011</inceptionYear>
 
   <scm>
     <url>http://github.com/99soft/t2t</url>
