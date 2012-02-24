@@ -36,29 +36,16 @@
     <developerConnection>scm:git:git+ssh://git@github.com/99soft/t2t.git</developerConnection>
   </scm>
 
+  <issueManagement>
+    <system>GitHub Issue Management</system>
+    <url>https://github.com/99soft/t2t/issues</url>
+  </issueManagement>
   <distributionManagement>
     <site>
       <id>github</id>
       <url>gitsite:git@github.com/99soft/t2t.git</url>
     </site>
   </distributionManagement>
-
-  <issueManagement>
-    <system>GitHub Issue Management</system>
-    <url>https://github.com/99soft/t2t/issues</url>
-  </issueManagement>
-
-  <repositories>
-    <repository>
-      <id>aduna-repo</id>
-      <name>Aduna Repository</name>
-      <url>http://repo.aduna-software.org/maven2/releases/</url>
-    </repository>
-    <repository>
-      <id>sunsite-repo</id>
-      <url>http://mirrors.sunsite.dk/maven2/</url>
-    </repository>
-  </repositories>
 
   <dependencies>
     <!--
@@ -152,6 +139,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>aduna-repo</id>
+      <name>Aduna Repository</name>
+      <url>http://repo.aduna-software.org/maven2/releases/</url>
+    </repository>
+    <repository>
+      <id>sunsite-repo</id>
+      <url>http://mirrors.sunsite.dk/maven2/</url>
+    </repository>
+  </repositories>
 
   <build>
     <plugins>
