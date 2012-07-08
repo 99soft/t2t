@@ -31,10 +31,12 @@
   -->
   <files>
     <file>
-      <source>LICENSE</source>
+      <source>${basedir}/src/main/assembly/LICENSE-with-deps</source>
+      <destName>LICENSE</destName>
     </file>
     <file>
-      <source>NOTICE</source>
+      <source>${basedir}/src/main/assembly/NOTICE-with-deps</source>
+      <destName>NOTICE</destName>
     </file>
     <file>
       <source>README</source>
