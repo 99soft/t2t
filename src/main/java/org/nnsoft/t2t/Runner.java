@@ -15,6 +15,7 @@
  */
 package org.nnsoft.t2t;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -25,6 +26,7 @@ import org.nnsoft.t2t.configuration.MigratorConfiguration;
 import org.nnsoft.t2t.core.DefaultMigrator;
 import org.nnsoft.t2t.core.Migrator;
 import org.nnsoft.t2t.core.MigratorException;
+import org.openrdf.model.impl.URIImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -32,26 +34,48 @@ import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
 
+import com.beust.jcommander.IStringConverter;
 import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+import com.beust.jcommander.converters.FileConverter;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
 public class Runner {
 
-    public static void main(String[] args) {
-        RunnerOptions options = new RunnerOptions();
+    @Parameter(names = { "-h", "--help" }, description = "Display help information.")
+    private boolean printHelp;
 
-        JCommander jCommander = new JCommander(options);
+    @Parameter(names = { "-v", "--version" }, description = "Display version information.")
+    private boolean printVersion;
+
+    @Parameter(
+        names = { "-c", "--configuration" },
+        description = "Force the use of an alternate XML Configuration file.",
+        converter = FileConverter.class
+    )
+    private File configurationFile = new File(System.getProperty("user.dir"), "t2t-config.xml");
+
+    @Parameter(
+        names = { "-e", "--entrypoint" },
+        description = "The URL entrypoint.",
+        converter = URIImplConverter.class,
+        required = true
+    )
+    private URIImpl entryPoint;
+
+    public void execute(String...args) {
+        JCommander jCommander = new JCommander(this);
         jCommander.setProgramName("t2t");
         jCommander.parseWithoutValidation(args);
 
-        if (options.isPrintHelp()) {
+        if (printHelp) {
             jCommander.usage();
             System.exit(-1);
         }
 
-        if (options.isPrintVersion()) {
+        if (printVersion) {
             Properties properties = new Properties();
             InputStream input = Runner.class.getClassLoader().getResourceAsStream("META-INF/maven/org.99soft/t2t/pom.properties");
 
@@ -89,13 +113,13 @@ public class Runner {
             System.exit(-1);
         }
 
-        if (!options.getConfigurationFile().exists() || options.getConfigurationFile().isDirectory()) {
+        if (!configurationFile.exists() || configurationFile.isDirectory()) {
             System.out.println(String.format("Non-readable XML Configuration file: %s (No such file).",
-                    options.getConfigurationFile()));
+                                             configurationFile));
             System.exit(-1);
         }
 
-        if (options.getEntryPoint() == null) {
+        if (entryPoint == null) {
             System.out.println("No URL entrypoint has been specified for this migration.");
             System.exit(-1);
         }
@@ -115,7 +139,7 @@ public class Runner {
         try {
             JoranConfigurator configurator = new JoranConfigurator();
             configurator.setContext(lc);
-            // the context was probably already configured by default configuration 
+            // the context was probably already configured by default configuration
             // rules
             lc.reset();
             configurator.doConfigure(Runner.class.getClassLoader().getResourceAsStream("logback-config.xml"));
@@ -123,10 +147,10 @@ public class Runner {
             // StatusPrinter should handle this
         }
 
-        logger.info("Loading configuration from: '{}'", options.getConfigurationFile());
+        logger.info("Loading configuration from: '{}'", configurationFile);
 
         MigratorConfiguration configuration =
-                ConfigurationManager.getInstance(options.getConfigurationFile()).getConfiguration();
+                ConfigurationManager.getInstance(configurationFile).getConfiguration();
         final Migrator migrator = new DefaultMigrator(configuration);
 
         logger.info("");
@@ -141,7 +165,7 @@ public class Runner {
         int exit = 0;
 
         try {
-            migrator.run(options.getEntryPoint());
+            migrator.run(entryPoint);
         } catch (MigratorException e) {
             logger.error("An error occurred during the migration process", e);
             exit = -1;
@@ -193,6 +217,21 @@ public class Runner {
         }
 
         return "undefined";
+    }
+
+    /**
+     *
+     */
+    public static class URIImplConverter implements IStringConverter<URIImpl> {
+
+        public URIImpl convert(String value) {
+            return new URIImpl(value);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        new Runner().execute(args);
     }
 
 }
