@@ -96,7 +96,8 @@ public class RuleTestCase
         assertNotNull( statements );
         assertTrue( statements.size() > 0 );
         Statement newExpectedStatement =
-            new StatementImpl( new URIImpl( "http://matteo.mo.ci" ), new URIImpl( "http://xmlns.org/foaf/01/knows" ),
+            new StatementImpl( new URIImpl( "http://matteo.mo.ci" ),
+                               new URIImpl( "http://xmlns.org/foaf/01/knows" ),
                                new URIImpl( "http://davidepalmisano.com" ) );
         assertTrue( statements.contains( statement ) );
         assertTrue( statements.contains( newExpectedStatement ) );
