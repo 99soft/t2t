@@ -41,7 +41,7 @@ $ gpg --verify t2t-1.0-bin.tar.gz.asc t2t-1.0-bin.tar.gz
 *----------*--------------*-----------------*----------------*----------------*
 |          | Download     | MD5 Checksum    | SHA1 Chechsum  | Signature      |
 *----------+--------------+-----------------+----------------+----------------+
-| T2T 1.0 (Binary tar.gz) | {{{./bin/1.0/t2t-1.0-bin.tar.gz}t2t-1.0-bin.tar.gz}} | {{{./bin/1.0/t2t-1.0-bin.tar.gz.md5}t2t-1.0-bin.tar.gz.md5}} | {{{./bin/1.0/t2t-1.0-bin.tar.gz.sha1}t2t-1.0-bin.tar.gz.sha1}} | {{{./bin/1.0/t2t-1.0-bin.tar.gz.asc}t2t-1.0-bin.tar.gz.asc}} |
+| T2T 1.0 (Binary tar.gz) | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.tar.gz}t2t-1.0-bin.tar.gz}} | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.tar.gz.md5}t2t-1.0-bin.tar.gz.md5}} | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.tar.gz.sha1}t2t-1.0-bin.tar.gz.sha1}} | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.tar.gz.asc}t2t-1.0-bin.tar.gz.asc}} |
 *----------+--------------+-----------------+----------------+----------------+
-| T2T 1.0 (Binary zip) | {{{./bin/1.0/t2t-1.0-bin.zip}t2t-1.0-bin.zip}} | {{{./bin/1.0/t2t-1.0-bin.zip.md5}t2t-1.0-bin.zip.md5}} | {{{./bin/1.0/t2t-1.0-bin.zip.sha1}t2t-1.0-bin.zip.sha1}} | {{{./bin/1.0/t2t-1.0-bin.zip.asc}t2t-1.0-bin.zip.asc}} |
+| T2T 1.0 (Binary zip) | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.zip}t2t-1.0-bin.zip}} | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.zip.md5}t2t-1.0-bin.zip.md5}} | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.zip.sha1}t2t-1.0-bin.zip.sha1}} | {{{http://repo1.maven.org/maven2/org/99soft/t2t/1.0/t2t-1.0-bin.zip.asc}t2t-1.0-bin.zip.asc}} |
 *----------+--------------+-----------------+----------------+----------------+
