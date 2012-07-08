@@ -55,7 +55,7 @@ public class RuleTestCase
         statementPattern.setSubjectVar( s );
         statementPattern.setPredicateVar( p );
         statementPattern.setObjectVar( o );
-        Set apply = new HashSet<StatementPattern>();
+        Set<StatementPattern> apply = new HashSet<StatementPattern>();
 
         StatementPattern statementPattern1 = new StatementPattern();
         Var s1 = new Var( "o" );
