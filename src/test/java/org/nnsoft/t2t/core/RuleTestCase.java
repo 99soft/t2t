@@ -16,6 +16,8 @@ package org.nnsoft.t2t.core;
  *    limitations under the License.
  */
 
+import static org.testng.Assert.*;
+
 import org.openrdf.model.Statement;
 import org.openrdf.model.impl.StatementImpl;
 import org.openrdf.model.impl.URIImpl;
@@ -84,7 +86,7 @@ public class RuleTestCase
     public void testMatch()
         throws RuleExecutionException
     {
-        Assert.assertTrue( rule.match( statement ) );
+        assertTrue( rule.match( statement ) );
     }
 
     @Test
@@ -92,13 +94,13 @@ public class RuleTestCase
         throws RuleExecutionException
     {
         Set<Statement> statements = rule.apply( statement );
-        Assert.assertNotNull( statements );
-        Assert.assertTrue( statements.size() > 0 );
+        assertNotNull( statements );
+        assertTrue( statements.size() > 0 );
         Statement newExpectedStatement =
             new StatementImpl( new URIImpl( "http://matteo.mo.ci" ), new URIImpl( "http://xmlns.org/foaf/01/knows" ),
                                new URIImpl( "http://davidepalmisano.com" ) );
-        Assert.assertTrue( statements.contains( statement ) );
-        Assert.assertTrue( statements.contains( newExpectedStatement ) );
+        assertTrue( statements.contains( statement ) );
+        assertTrue( statements.contains( newExpectedStatement ) );
     }
 
 }

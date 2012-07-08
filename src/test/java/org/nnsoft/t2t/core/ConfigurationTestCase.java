@@ -16,15 +16,18 @@ package org.nnsoft.t2t.core;
  *    limitations under the License.
  */
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
+
+import java.io.File;
+
 import org.nnsoft.t2t.configuration.ConfigurationManager;
 import org.nnsoft.t2t.configuration.MigratorConfiguration;
 import org.openrdf.model.impl.URIImpl;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.io.File;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
@@ -51,21 +54,21 @@ public class ConfigurationTestCase
     public void testConfiguraion()
     {
         MigratorConfiguration migratorConfiguration = configurationManager.getConfiguration();
-        Assert.assertNotNull( migratorConfiguration );
-        Assert.assertEquals( migratorConfiguration.getCommitRate(), 500 );
-        Assert.assertEquals( migratorConfiguration.isActiveFiltering(), false );
-        Assert.assertEquals( migratorConfiguration.getSourceGraph(),
+        assertNotNull( migratorConfiguration );
+        assertEquals( migratorConfiguration.getCommitRate(), 500 );
+        assertEquals( migratorConfiguration.isActiveFiltering(), false );
+        assertEquals( migratorConfiguration.getSourceGraph(),
                              new URIImpl( "http://www.cybion.it/proconsult/url" ) );
-        Assert.assertEquals( migratorConfiguration.getDestinationGraph(),
+        assertEquals( migratorConfiguration.getDestinationGraph(),
                              new URIImpl( "http://collective.com/resources/web" ) );
-        Assert.assertEquals( migratorConfiguration.getSourceConnection(),
+        assertEquals( migratorConfiguration.getSourceConnection(),
                              new MigratorConfiguration.ConnectionParameter( "cibionte.dyndns.org", 1111, "dba",
                                                                             "cybiondba" ) );
-        Assert.assertEquals( migratorConfiguration.getDestinationConnection(),
+        assertEquals( migratorConfiguration.getDestinationConnection(),
                              new MigratorConfiguration.ConnectionParameter( "cibionte.dyndns.org", 1111, "dba",
                                                                             "cybiondba" ) );
-        Assert.assertTrue( migratorConfiguration.getRules().size() == 1 );
-        Assert.assertTrue( migratorConfiguration.getNamespaceMappings().size() == 1 );
+        assertTrue( migratorConfiguration.getRules().size() == 1 );
+        assertTrue( migratorConfiguration.getNamespaceMappings().size() == 1 );
     }
 
 }
