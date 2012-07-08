@@ -1,3 +1,5 @@
+package org.nnsoft.t2t.core;
+
 /*
  *    Copyright 2011-2012 The 99 Software Foundation
  *
@@ -13,8 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.t2t.core;
-
 
 import org.nnsoft.t2t.configuration.ConfigurationManager;
 import org.nnsoft.t2t.configuration.MigratorConfiguration;
@@ -34,26 +34,31 @@ import java.util.Set;
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
-public class DefaultMigratorTestCase {
+public class DefaultMigratorTestCase
+{
 
     private Migrator migrator;
 
     @BeforeTest
-    public void setUp() throws MigratorException {
+    public void setUp()
+        throws MigratorException
+    {
         MigratorConfiguration configuration =
-                ConfigurationManager.getInstance(new File("src/test/resources/configuration.xml"))
-                        .getConfiguration();
-        migrator = new DefaultMigrator(configuration);
+            ConfigurationManager.getInstance( new File( "src/test/resources/configuration.xml" ) ).getConfiguration();
+        migrator = new DefaultMigrator( configuration );
     }
 
     @AfterTest
-    public void tearDown() {
+    public void tearDown()
+    {
         migrator = null;
     }
 
-    @Test(enabled = false)
-    public void testRun() throws MigratorException {
-        migrator.run(new URIImpl("http://www.cybion.it/proconsult/fonte_rss/40"));
+    @Test( enabled = false )
+    public void testRun()
+        throws MigratorException
+    {
+        migrator.run( new URIImpl( "http://www.cybion.it/proconsult/fonte_rss/40" ) );
     }
 
 }
