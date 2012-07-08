@@ -211,39 +211,6 @@
           </descriptors>
         </configuration>
       </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.1</version>
-        <configuration>
-          <ascDirectory>${basedir}</ascDirectory>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>net.ju-n.maven.plugins</groupId>
-        <artifactId>maven-checksum-plugin</artifactId>
-        <version>1.0</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>files</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <files>
-            <file>${project.build.directory}/site/bin/${project.version}/${project.artifactId}-${project.version}-bin.tar.gz</file>
-            <file>${project.build.directory}/site/bin/${project.version}/${project.artifactId}-${project.version}-bin.zip</file>
-          </files>
-          <algorithms>
-            <algorithm>MD5</algorithm>
-            <algorithm>SHA-1</algorithm>
-          </algorithms>
-        </configuration>
-      </plugin>
     </plugins>
 
     <resources>
