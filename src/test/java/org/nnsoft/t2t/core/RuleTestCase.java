@@ -44,9 +44,9 @@ public class RuleTestCase
     @BeforeTest
     public void setUp()
     {
-        statement =
-            new StatementImpl( new URIImpl( "http://davidepalmisano.com" ),
-                               new URIImpl( "http://xmlns.org/foaf/01/knows" ), new URIImpl( "http://matteo.mo.ci" ) );
+        statement = new StatementImpl( new URIImpl( "http://davidepalmisano.com" ),
+                                       new URIImpl( "http://xmlns.org/foaf/01/knows" ),
+                                       new URIImpl( "http://matteo.mo.ci" ) );
         StatementPattern statementPattern = new StatementPattern();
         Var s = new Var( "s" );
         Var p = new Var( "p", new URIImpl( "http://xmlns.org/foaf/01/knows" ) );
@@ -95,10 +95,9 @@ public class RuleTestCase
         Set<Statement> statements = rule.apply( statement );
         assertNotNull( statements );
         assertTrue( statements.size() > 0 );
-        Statement newExpectedStatement =
-            new StatementImpl( new URIImpl( "http://matteo.mo.ci" ),
-                               new URIImpl( "http://xmlns.org/foaf/01/knows" ),
-                               new URIImpl( "http://davidepalmisano.com" ) );
+        Statement newExpectedStatement = new StatementImpl( new URIImpl( "http://matteo.mo.ci" ),
+                                                            new URIImpl( "http://xmlns.org/foaf/01/knows" ),
+                                                            new URIImpl( "http://davidepalmisano.com" ) );
         assertTrue( statements.contains( statement ) );
         assertTrue( statements.contains( newExpectedStatement ) );
     }
