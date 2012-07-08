@@ -1,3 +1,5 @@
+package org.nnsoft.t2t.core;
+
 /*
  *    Copyright 2011-2012 The 99 Software Foundation
  *
@@ -13,10 +15,10 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.t2t.core;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
-public class RuleExecurionReport {
+public class RuleExecurionReport
+{
 }

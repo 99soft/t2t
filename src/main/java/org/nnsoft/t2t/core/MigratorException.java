@@ -1,3 +1,5 @@
+package org.nnsoft.t2t.core;
+
 /*
  *    Copyright 2011-2012 The 99 Software Foundation
  *
@@ -13,24 +15,24 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.t2t.core;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
-public class MigratorException extends Exception {
+public class MigratorException
+    extends Exception
+{
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = -4791043389071510298L;
 
-    public MigratorException(String message) {
-        super(message);
+    public MigratorException( String message )
+    {
+        super( message );
     }
 
-    public MigratorException(String message, Exception e) {
-        super(message, e);
+    public MigratorException( String message, Exception e )
+    {
+        super( message, e );
     }
 
 }

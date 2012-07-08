@@ -1,3 +1,4 @@
+package org.nnsoft.t2t.slicers;
 /*
  *    Copyright 2011-2012 The 99 Software Foundation
  *
@@ -13,24 +14,24 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.t2t.slicers;
 
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
-public class SlicerException extends Exception {
+public class SlicerException
+    extends Exception
+{
 
-    /**
-     * 
-     */
     private static final long serialVersionUID = 1L;
 
-    public SlicerException() {
+    public SlicerException()
+    {
         super();
     }
 
-    public SlicerException(String message) {
-        super(message);
+    public SlicerException( String message )
+    {
+        super( message );
     }
 
 }

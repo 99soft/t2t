@@ -1,3 +1,5 @@
+package org.nnsoft.t2t.core;
+
 /*
  *    Copyright 2011-2012 The 99 Software Foundation
  *
@@ -13,7 +15,6 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.nnsoft.t2t.core;
 
 import org.openrdf.model.URI;
 import org.openrdf.repository.Repository;
@@ -21,16 +22,19 @@ import org.openrdf.repository.Repository;
 /**
  * @author Davide Palmisano ( dpalmisano@gmail.com )
  */
-public interface Migrator {
+public interface Migrator
+{
 
-    public void setSourceRepository(Repository repository, URI graph)
-            throws MigratorException;
+    public void setSourceRepository( Repository repository, URI graph )
+        throws MigratorException;
 
-    public void setDestinationRepository(Repository repository, URI graph) 
-            throws MigratorException;
+    public void setDestinationRepository( Repository repository, URI graph )
+        throws MigratorException;
 
-    public void addRule(Rule rule) throws MigratorException;
-    
-    public MigrationStats run(URI entrypoint) throws MigratorException;
+    public void addRule( Rule rule )
+        throws MigratorException;
+
+    public MigrationStats run( URI entrypoint )
+        throws MigratorException;
 
 }
